@@ -136,6 +136,10 @@ $ cat resfile
 150 A PIKAA W
 ```
 
+![docking random dataset](imgs/docking.gif)
+
+*Example run showing the structures of mutants of degrees* `1 - 8`*, with 8 positions allowed to mutate. The molecule in orange is the substrate. All these mutants were scored using Rosetta.*
+
 ### Hotspots and mutant degrees
 
 The following dataset of mutants:
@@ -199,7 +203,7 @@ A,R,N,D,C,Q,E,G,H,I,L,K,M,F,P,S,T,W,Y,V,AAIndex
 
 ### The ligand
 
-The NN is agnostic to the identity of the ligand, so it must be kept constant within the training dataset. A few of the tested ligands can be found in the subdirectory [`ligands`](ligands/).
+The NN is agnostic to the identity of the ligand, so it must be kept constant within the training dataset. A few of the tested ligands can be found in the [`ligands/`](ligands/) subdirectory.
 
 ![ligands](imgs/ligands.png)
 
