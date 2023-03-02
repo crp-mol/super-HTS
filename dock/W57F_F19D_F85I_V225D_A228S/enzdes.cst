@@ -1,0 +1,19 @@
+# first contraint, distance amine sidechain of lys to H99 of the substrate. 
+# LYS287 - SUB constraint
+CST::BEGIN
+  TEMPLATE::  ATOM_MAP: 1 atom_name: C99 N99 C50
+  TEMPLATE::  ATOM_MAP: 1 residue3: SUB
+
+  TEMPLATE::  ATOM_MAP: 2 atom_name: 1HZ NZ CE
+  TEMPLATE::  ATOM_MAP: 2 residue3: LYS
+
+# contraints created nov-2019
+CONSTRAINT:: distanceAB: 1.0 0.2  50.00 0 0		#Res1:Atom1 = Res2:Atom1 ==> C99-HZ
+CONSTRAINT::    angle_A: 90.0 20.0  0.00 360.0 0	#Res1:Atom2 - Res1:Atom1 - Res2:Atom1 ==> N99-C99-HZ
+CONSTRAINT::    angle_B: 180.0 20.0  0.00 360.0 0	#Res1:Atom1 - Res2:Atom1 - Res2:Atom2 ==> C99-HZ-NZ
+
+CONSTRAINT::  torsion_A: 120.0 20.0 0.00 360.0 0	#Res1:Atom3 - Res1:Atom2 - Res1:Atom1 - Res2:Atom1 ==> C50-N99-C99-HZ
+CONSTRAINT:: torsion_AB: 120.0 20.0 0.00 360.0 0	#Res1:Atom2 - Res1:Atom1 - Res2:Atom1 - Res2:Atom2 ==> N99-C99-HZ-NZ
+CONSTRAINT::  torsion_B: 120.0 20.0 0.00 360.0 0	#Res1:Atom1 - Res2:Atom1 - Res2:Atom2 - Res2:Atom3 ==> C99-HZ-NZ-CE
+
+CST::END

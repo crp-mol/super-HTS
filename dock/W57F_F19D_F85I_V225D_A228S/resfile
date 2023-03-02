@@ -1,0 +1,10 @@
+#Specify extra rotamers at chi 1 and chi 2
+#EX 1 EX 2
+AUTO
+start
+# here goes the list of wanted mutations
+57 A PIKAA F
+19 A PIKAA D
+85 B PIKAA I
+225 A PIKAA D
+228 A PIKAA S

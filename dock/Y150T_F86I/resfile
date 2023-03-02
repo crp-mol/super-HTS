@@ -1,0 +1,7 @@
+#Specify extra rotamers at chi 1 and chi 2
+#EX 1 EX 2
+AUTO
+start
+# here goes the list of wanted mutations
+150 A PIKAA T
+86 B PIKAA I

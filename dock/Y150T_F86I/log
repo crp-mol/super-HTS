@@ -1,0 +1,1050 @@
+core.init: Rosetta version exported  from http://www.rosettacommons.org
+core.init: command: /home/username/soft/rosetta_bin_linux_2015.25.57927_bundle/main/source/bin/enzyme_design.static.linuxgccrelease @flags -resfile resfile -database /home/username/soft/rosetta_bin_linux_2015.25.57927_bundle/main/database/ -enzdes::cstfile enzdes.cst -nstruct 10 -s 4e3q.pdb
+core.init: Constant seed mode, seed=1111111 seed_offset=0 real_seed=1111111
+core.init.random: RandomGenerator:init: Normal mode, seed=1111111 RG_type=mt19937
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/sp2_elec_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_pp
+basic.io.database: Database file opened: scoring/score_functions/rama/Rama_smooth_dyn.dat_ss_6.4
+core.scoring.etable: Using alternate parameters: LJ_RADIUS_SOFT in Etable construction.
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+core.chemical.ResidueTypeSet: Finished initializing fa_standard residue type set.  Created 787 residue types
+basic.io.database: Database file opened: scoring/score_functions/envsmooth/envdata.txt
+basic.io.database: Database file opened: scoring/score_functions/carbon_hbond/ch_o_bond_potential.dat
+basic.io.database: Database file opened: scoring/score_functions/custom_pair_distance/pos_charge_repulsion
+basic.io.database: Database file opened: scoring/score_functions/custom_pair_distance/neg_charge_repulsion
+core.scoring.custom_pair_distance.FullatomCustomPairDistanceEnergy: Added 6480 AtomPairFuncList lists
+protocols.jobdist.JobDistributors: Looking for an available job: 1 1 4e3q.pdb 1
+apps.public.enzdes.enzyme_design: Starting 4e3q_0001 ...
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 25 in file 4e3q.pdb. Best match rsd_type:  HIS
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 475 in file 4e3q.pdb. Best match rsd_type:  HIS
+core.io.pdb.file_data: [ WARNING ] discarding 1 atoms at position 627 in file 4e3q.pdb. Best match rsd_type:  HIS
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+core.pack.dunbrack: Dunbrack 2010 library took 0.12 seconds to load from binary
+core.pack.dunbrack.SingleLigandRotamerLibrary: Read in 359 rotamers for SUB!
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: read enzyme constraints from enzdes.cst ... done, 1 cst blocks were read.
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.1700;  energy_drop/trial= -30.63240
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 57 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+221+222+225+226+227+228+229+255+256+257+258+259+281+282+283+284+292+293+294+414+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10206 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 78706208 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 51 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 52 -1  EDGE 58 112 -1  EDGE 112 114 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 115 -1  EDGE 122 147 -1  EDGE 147 155 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 156 -1  EDGE 161 218 -1  EDGE 218 222 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 223 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 565 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6763 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 34267408 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 49 -1  EDGE 49 50 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 51 -1  EDGE 58 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 149 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 150 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 221 -1  EDGE 224 226 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 227 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 567 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6768 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 34334064 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 54 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 55 -1  EDGE 58 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 155 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 156 -1  EDGE 161 218 -1  EDGE 218 222 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 223 -1  EDGE 224 226 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 227 -1  EDGE 230 254 -1  EDGE 254 256 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 257 -1  EDGE 260 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 422 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 423 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 531 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 532 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 564 -1  EDGE 569 768 -1  EDGE 768 770 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 54 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 52 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 53 -1  EDGE 58 112 -1  EDGE 112 119 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 120 -1  EDGE 122 147 -1  EDGE 147 158 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 159 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 225 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 226 -1  EDGE 229 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 281 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 418 12 CA CA  END  EDGE 418 416 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 567 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 54 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7294 rotamers at 54 positions.
+core.pack.pack_rotamers: IG: 40333256 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 16 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 17 -1  EDGE 21 49 -1  EDGE 49 56 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 57 -1  EDGE 58 112 -1  EDGE 112 113 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 114 -1  EDGE 122 147 -1  EDGE 147 156 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 157 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 281 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 418 12 CA CA  END  EDGE 418 414 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 531 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 532 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 567 -1  EDGE 569 768 -1  EDGE 768 769 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+basic.io.database: Database file opened: scoring/score_functions/SurfacePotential/average_hASA_by_res_and_neighbor.txt
+basic.io.database: Database file opened: scoring/score_functions/SurfacePotential/surface_score.txt
+basic.io.database: Database file opened: scoring/score_functions/SurfacePotential/hpatch_score.txt
+apps.public.enzdes.enzyme_design: Finished 4e3q_0001 in 79 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 2 1 4e3q.pdb 2
+apps.public.enzdes.enzyme_design: Starting 4e3q_0002 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.1700;  energy_drop/trial= -30.58436
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 57 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+221+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 9986 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 76495840 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 285 -1  EDGE 285 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 51 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 52 -1  EDGE 58 112 -1  EDGE 112 120 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 121 -1  EDGE 122 147 -1  EDGE 147 156 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 157 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 283 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 563 -1  EDGE 569 765 -1  EDGE 765 770 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6606 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 33697716 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 285 -1  EDGE 285 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 52 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 53 -1  EDGE 58 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 151 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 152 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 227 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 228 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 565 -1  EDGE 569 765 -1  EDGE 765 772 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6646 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 33921056 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 285 -1  EDGE 285 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 56 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 57 -1  EDGE 58 112 -1  EDGE 112 113 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 114 -1  EDGE 122 147 -1  EDGE 147 152 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 153 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 221 -1  EDGE 224 226 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 227 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 422 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 423 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 567 -1  EDGE 569 765 -1  EDGE 765 771 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 52 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+19+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 19, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 21, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 22 3 CA CA  END  EDGE 22 20 -1  EDGE 22 53 -1  EDGE 53 57 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 58 -1  EDGE 59 112 -1  EDGE 112 115 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 116 -1  EDGE 122 147 -1  EDGE 147 155 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 156 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 283 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 565 -1  EDGE 569 768 -1  EDGE 768 770 -1  JEDGE 768 774 15 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 53 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+19+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 19, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7035 rotamers at 53 positions.
+core.pack.pack_rotamers: IG: 38554304 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 21, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 229 -1  EDGE 229 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 22 3 CA CA  END  EDGE 22 19 -1  EDGE 22 53 -1  EDGE 53 54 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 55 -1  EDGE 59 112 -1  EDGE 112 113 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 114 -1  EDGE 122 147 -1  EDGE 147 152 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 153 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 224 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 225 -1  EDGE 229 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 280 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 281 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 563 -1  EDGE 569 765 -1  EDGE 765 767 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 768 -1  EDGE 774 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0002 in 85 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 3 1 4e3q.pdb 3
+apps.public.enzdes.enzyme_design: Starting 4e3q_0003 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.1200;  energy_drop/trial= -30.72351
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 57 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+221+222+225+226+227+228+229+255+256+257+258+259+281+282+283+284+292+293+294+414+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10206 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 78550556 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 52 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 53 -1  EDGE 58 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 151 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 152 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 280 -1  EDGE 280 282 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 568 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6772 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 34204844 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 49 -1  EDGE 49 53 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 54 -1  EDGE 58 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 148 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 149 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 221 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 280 -1  EDGE 280 282 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 568 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6752 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 34320720 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 55 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 56 -1  EDGE 58 112 -1  EDGE 112 115 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 116 -1  EDGE 122 147 -1  EDGE 147 155 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 156 -1  EDGE 161 218 -1  EDGE 218 222 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 223 -1  EDGE 224 227 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 228 -1  EDGE 230 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 563 -1  EDGE 569 768 -1  EDGE 768 771 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 54 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 49 -1  EDGE 49 55 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 56 -1  EDGE 58 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 149 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 150 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 418 12 CA CA  END  EDGE 418 414 -1  EDGE 418 422 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 423 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 565 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 566 -1  EDGE 569 768 -1  EDGE 768 769 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 54 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7286 rotamers at 54 positions.
+core.pack.pack_rotamers: IG: 40566852 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 49 -1  EDGE 49 51 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 52 -1  EDGE 58 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 155 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 156 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 280 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 281 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 418 12 CA CA  END  EDGE 418 416 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 564 -1  EDGE 569 768 -1  EDGE 768 770 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0003 in 88 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 4 1 4e3q.pdb 4
+apps.public.enzdes.enzyme_design: Starting 4e3q_0004 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.1700;  energy_drop/trial= -30.71958
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 57 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+221+222+225+226+227+228+229+255+256+257+258+259+281+282+283+284+292+293+294+414+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10208 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 78358728 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 56 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 57 -1  EDGE 58 112 -1  EDGE 112 119 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 120 -1  EDGE 122 147 -1  EDGE 147 156 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 157 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 221 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 420 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 421 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 568 -1  EDGE 569 768 -1  EDGE 768 771 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6787 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 34569252 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 51 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 52 -1  EDGE 58 112 -1  EDGE 112 115 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 116 -1  EDGE 122 147 -1  EDGE 147 158 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 159 -1  EDGE 161 218 -1  EDGE 218 222 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 223 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 280 -1  EDGE 280 281 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 565 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 566 -1  EDGE 569 768 -1  EDGE 768 769 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6809 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 34821500 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 49 -1  EDGE 49 52 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 53 -1  EDGE 58 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 149 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 150 -1  EDGE 161 218 -1  EDGE 218 222 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 223 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 280 -1  EDGE 280 282 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 563 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 52 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+19+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 19, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 21, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 16 -1  JEDGE 15 22 3 CA CA  END  EDGE 22 17 -1  EDGE 22 53 -1  EDGE 53 57 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 58 -1  EDGE 59 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 157 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 158 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 279 -1  EDGE 279 283 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 565 -1  EDGE 569 768 -1  EDGE 768 771 -1  JEDGE 768 774 15 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 51 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+19+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 19, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6957 rotamers at 51 positions.
+core.pack.pack_rotamers: IG: 38417532 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 21, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 220, 221, 222, 223, 224, 225, 226, 227, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 228 -1  EDGE 228 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 228 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 22 3 CA CA  END  EDGE 22 18 -1  EDGE 22 53 -1  EDGE 53 56 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 57 -1  EDGE 59 112 -1  EDGE 112 114 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 115 -1  EDGE 122 147 -1  EDGE 147 154 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 155 -1  EDGE 161 219 -1  EDGE 219 221 -1  JEDGE 219 228 7 CA CA  END  EDGE 228 222 -1  EDGE 228 254 -1  EDGE 254 257 -1  JEDGE 254 260 8 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 281 -1  JEDGE 279 285 9 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 10 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 11 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 12 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 13 CA CA  END  EDGE 569 567 -1  EDGE 569 768 -1  EDGE 768 769 -1  JEDGE 768 774 14 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 228 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0004 in 85 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 5 1 4e3q.pdb 5
+apps.public.enzdes.enzyme_design: Starting 4e3q_0005 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.1600;  energy_drop/trial= -30.73754
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+281+282+283+284+292+293+294+414+416+421+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10168 rotamers at 56 positions.
+core.pack.pack_rotamers: IG: 77727076 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 259 -1  EDGE 259 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 259 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 50 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 51 -1  EDGE 58 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 158 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 159 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 256 -1  JEDGE 254 259 9 CA CA  END  EDGE 259 257 -1  EDGE 259 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 420 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 421 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 565 -1  EDGE 569 765 -1  EDGE 765 769 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 259 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6719 rotamers at 56 positions.
+core.pack.pack_rotamers: IG: 33947268 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 259 -1  EDGE 259 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 259 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 49 -1  EDGE 49 50 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 51 -1  EDGE 58 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 156 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 157 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 259 9 CA CA  END  EDGE 259 258 -1  EDGE 259 280 -1  EDGE 280 281 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 422 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 423 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 564 -1  EDGE 569 765 -1  EDGE 765 770 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 259 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6747 rotamers at 56 positions.
+core.pack.pack_rotamers: IG: 33864564 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 259 -1  EDGE 259 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 259 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 55 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 56 -1  EDGE 58 112 -1  EDGE 112 115 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 116 -1  EDGE 122 147 -1  EDGE 147 156 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 157 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 224 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 259 9 CA CA  END  EDGE 259 258 -1  EDGE 259 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 565 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 566 -1  EDGE 569 765 -1  EDGE 765 770 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 259 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 51 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 16 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 17 -1  EDGE 21 53 -1  EDGE 53 57 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 58 -1  EDGE 59 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 150 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 151 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 224 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 225 -1  EDGE 229 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 563 -1  EDGE 569 768 -1  EDGE 768 771 -1  JEDGE 768 774 15 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 51 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+19+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 19, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7012 rotamers at 51 positions.
+core.pack.pack_rotamers: IG: 38863592 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 21, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 220, 221, 222, 223, 224, 225, 226, 227, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 228 -1  EDGE 228 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 228 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 20 -1  JEDGE 15 22 3 CA CA  END  EDGE 22 21 -1  EDGE 22 53 -1  EDGE 53 56 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 57 -1  EDGE 59 112 -1  EDGE 112 114 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 115 -1  EDGE 122 147 -1  EDGE 147 156 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 157 -1  EDGE 161 219 -1  EDGE 219 223 -1  JEDGE 219 228 7 CA CA  END  EDGE 228 224 -1  EDGE 228 254 -1  EDGE 254 257 -1  JEDGE 254 260 8 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 281 -1  JEDGE 279 285 9 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 10 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 11 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 12 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 13 CA CA  END  EDGE 569 568 -1  EDGE 569 768 -1  EDGE 768 770 -1  JEDGE 768 774 14 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 228 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0005 in 84 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 6 1 4e3q.pdb 6
+apps.public.enzdes.enzyme_design: Starting 4e3q_0006 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.2000;  energy_drop/trial= -31.15293
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 57 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+221+222+225+226+227+228+229+255+256+257+258+259+281+282+283+284+292+293+294+414+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10206 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 78550556 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 55 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 56 -1  EDGE 58 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 148 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 149 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 280 -1  EDGE 280 281 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 563 -1  EDGE 569 768 -1  EDGE 768 771 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6668 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 32831192 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 56 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 57 -1  EDGE 58 112 -1  EDGE 112 114 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 115 -1  EDGE 122 147 -1  EDGE 147 152 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 153 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 226 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 227 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 280 -1  EDGE 280 281 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 418 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 563 -1  EDGE 569 768 -1  EDGE 768 769 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6651 rotamers at 57 positions.
+core.pack.pack_rotamers: IG: 32395756 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 51 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 52 -1  EDGE 58 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 151 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 152 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 564 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 52 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 50 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 51 -1  EDGE 58 112 -1  EDGE 112 119 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 120 -1  EDGE 122 147 -1  EDGE 147 158 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 159 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 531 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 532 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 568 -1  EDGE 569 768 -1  EDGE 768 771 -1  JEDGE 768 774 15 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 52 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7213 rotamers at 52 positions.
+core.pack.pack_rotamers: IG: 39708540 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 50 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 51 -1  EDGE 58 112 -1  EDGE 112 119 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 120 -1  EDGE 122 147 -1  EDGE 147 149 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 150 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 224 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 225 -1  EDGE 229 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 531 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 532 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 565 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 15 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0006 in 82 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 7 1 4e3q.pdb 7
+apps.public.enzdes.enzyme_design: Starting 4e3q_0007 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.2200;  energy_drop/trial= -35.14750
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 58 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+162+220+222+225+226+227+228+229+255+256+257+258+259+281+282+283+284+286+287+292+293+294+414+416+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 162, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 286, 287, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10379 rotamers at 58 positions.
+core.pack.pack_rotamers: IG: 80209132 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 285, 286, 287, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 289 -1  EDGE 289 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 289 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 53 -1  EDGE 53 56 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 57 -1  EDGE 59 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 158 -1  JEDGE 147 163 6 CA CA  END  EDGE 163 159 -1  EDGE 163 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 280 -1  EDGE 280 286 -1  JEDGE 280 288 10 CA CA  END  EDGE 288 287 -1  EDGE 288 289 -1  EDGE 289 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 565 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 566 -1  EDGE 569 765 -1  EDGE 765 767 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 768 -1  EDGE 774 902 -1  EDGE 289 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6757 rotamers at 58 positions.
+core.pack.pack_rotamers: IG: 34009196 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 285, 286, 287, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 230 -1  EDGE 230 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 16 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 17 -1  EDGE 21 53 -1  EDGE 53 55 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 56 -1  EDGE 59 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 149 -1  JEDGE 147 163 6 CA CA  END  EDGE 163 150 -1  EDGE 163 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 280 -1  EDGE 280 284 -1  JEDGE 280 288 10 CA CA  END  EDGE 288 285 -1  EDGE 288 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 531 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 532 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 567 -1  EDGE 569 765 -1  EDGE 765 768 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 769 -1  EDGE 774 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6760 rotamers at 58 positions.
+core.pack.pack_rotamers: IG: 33910392 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 285, 286, 287, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 230 -1  EDGE 230 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 53 -1  EDGE 53 54 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 55 -1  EDGE 59 112 -1  EDGE 112 113 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 114 -1  EDGE 122 147 -1  EDGE 147 153 -1  JEDGE 147 163 6 CA CA  END  EDGE 163 154 -1  EDGE 163 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 280 -1  EDGE 280 282 -1  JEDGE 280 288 10 CA CA  END  EDGE 288 283 -1  EDGE 288 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 565 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 566 -1  EDGE 569 765 -1  EDGE 765 768 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 769 -1  EDGE 774 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 54 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 17+18+19+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 17, 18, 19, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 229 -1  EDGE 229 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 53 -1  EDGE 53 54 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 55 -1  EDGE 59 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 150 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 151 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 565 -1  EDGE 569 765 -1  EDGE 765 772 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 55 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 17+18+19+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+767+768+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 17, 18, 19, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 767, 768, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7065 rotamers at 55 positions.
+core.pack.pack_rotamers: IG: 38149364 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 229 -1  EDGE 229 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 53 -1  EDGE 53 57 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 58 -1  EDGE 59 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 158 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 159 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 564 -1  EDGE 569 766 -1  EDGE 766 770 -1  JEDGE 766 774 15 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0007 in 80 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 8 1 4e3q.pdb 8
+apps.public.enzdes.enzyme_design: Starting 4e3q_0008 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.0800;  energy_drop/trial= -30.85387
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 55 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+281+282+283+284+292+293+294+414+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10117 rotamers at 55 positions.
+core.pack.pack_rotamers: IG: 77694300 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 49 -1  EDGE 49 56 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 57 -1  EDGE 58 112 -1  EDGE 112 114 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 115 -1  EDGE 122 147 -1  EDGE 147 157 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 158 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 255 -1  JEDGE 254 259 9 CA CA  END  EDGE 259 256 -1  EDGE 259 280 -1  EDGE 280 281 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 420 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 421 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 567 -1  EDGE 569 768 -1  EDGE 768 770 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6659 rotamers at 55 positions.
+core.pack.pack_rotamers: IG: 33169500 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 54 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 55 -1  EDGE 58 112 -1  EDGE 112 119 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 120 -1  EDGE 122 147 -1  EDGE 147 148 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 149 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 259 9 CA CA  END  EDGE 259 258 -1  EDGE 259 280 -1  EDGE 280 282 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 422 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 423 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 567 -1  EDGE 569 768 -1  EDGE 768 771 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6704 rotamers at 55 positions.
+core.pack.pack_rotamers: IG: 33681452 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 52 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 53 -1  EDGE 58 112 -1  EDGE 112 118 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 119 -1  EDGE 122 147 -1  EDGE 147 154 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 155 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 224 -1  EDGE 224 225 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 226 -1  EDGE 230 254 -1  EDGE 254 255 -1  JEDGE 254 259 9 CA CA  END  EDGE 259 256 -1  EDGE 259 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 420 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 421 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 568 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 54 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 56 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 57 -1  EDGE 58 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 149 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 150 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 225 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 226 -1  EDGE 229 254 -1  EDGE 254 256 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 257 -1  EDGE 260 279 -1  EDGE 279 281 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 418 12 CA CA  END  EDGE 418 414 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 568 -1  EDGE 569 768 -1  EDGE 768 772 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 54 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+421+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 421, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7448 rotamers at 54 positions.
+core.pack.pack_rotamers: IG: 42059748 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 54 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 55 -1  EDGE 58 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 159 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 160 -1  EDGE 161 218 -1  EDGE 218 219 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 220 -1  EDGE 223 227 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 228 -1  EDGE 229 254 -1  EDGE 254 256 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 257 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 418 12 CA CA  END  EDGE 418 415 -1  EDGE 418 419 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 420 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 564 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 565 -1  EDGE 569 768 -1  EDGE 768 769 -1  JEDGE 768 774 16 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0008 in 84 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 9 1 4e3q.pdb 9
+apps.public.enzdes.enzyme_design: Starting 4e3q_0009 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.2300;  energy_drop/trial= -41.19704
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 59 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+162+220+221+222+225+226+227+228+229+255+256+257+258+259+281+282+283+284+286+287+292+293+294+414+416+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 162, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 286, 287, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10382 rotamers at 59 positions.
+core.pack.pack_rotamers: IG: 80822000 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 285, 286, 287, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 230 -1  EDGE 230 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 53 -1  EDGE 53 56 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 57 -1  EDGE 59 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 154 -1  JEDGE 147 163 6 CA CA  END  EDGE 163 155 -1  EDGE 163 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 227 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 228 -1  EDGE 230 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 280 -1  EDGE 280 286 -1  JEDGE 280 288 10 CA CA  END  EDGE 288 287 -1  EDGE 288 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 562 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 563 -1  EDGE 569 765 -1  EDGE 765 771 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 772 -1  EDGE 774 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6694 rotamers at 59 positions.
+core.pack.pack_rotamers: IG: 33975060 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 285, 286, 287, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 230 -1  EDGE 230 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 53 -1  EDGE 53 55 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 56 -1  EDGE 59 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 155 -1  JEDGE 147 163 6 CA CA  END  EDGE 163 156 -1  EDGE 163 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 280 -1  EDGE 280 284 -1  JEDGE 280 288 10 CA CA  END  EDGE 288 285 -1  EDGE 288 290 -1  EDGE 290 291 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 292 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 564 -1  EDGE 569 765 -1  EDGE 765 772 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6684 rotamers at 59 positions.
+core.pack.pack_rotamers: IG: 34266772 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 219, 220, 221, 222, 223, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 285, 286, 287, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 230 -1  EDGE 230 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 17 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 18 -1  EDGE 21 53 -1  EDGE 53 56 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 57 -1  EDGE 59 112 -1  EDGE 112 113 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 114 -1  EDGE 122 147 -1  EDGE 147 148 -1  JEDGE 147 163 6 CA CA  END  EDGE 163 149 -1  EDGE 163 218 -1  EDGE 218 221 -1  JEDGE 218 224 7 CA CA  END  EDGE 224 222 -1  EDGE 224 228 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 229 -1  EDGE 230 254 -1  EDGE 254 256 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 257 -1  EDGE 260 280 -1  EDGE 280 281 -1  JEDGE 280 288 10 CA CA  END  EDGE 288 282 -1  EDGE 288 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 531 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 532 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 567 -1  EDGE 569 765 -1  EDGE 765 768 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 769 -1  EDGE 774 902 -1  EDGE 230 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 53 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+532+534+535+564+568+768+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 532, 534, 535, 564, 568, 768, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 767 -1  EDGE 767 902 -1  EDGE 767 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 53 -1  EDGE 53 54 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 55 -1  EDGE 59 112 -1  EDGE 112 114 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 115 -1  EDGE 122 147 -1  EDGE 147 151 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 152 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 227 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 228 -1  EDGE 229 254 -1  EDGE 254 257 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 258 -1  EDGE 260 279 -1  EDGE 279 281 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 418 12 CA CA  END  EDGE 418 414 -1  EDGE 418 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 531 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 532 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 567 -1  EDGE 569 767 -1  EDGE 767 772 -1  JEDGE 767 774 15 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 767 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 52 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+415+416+532+534+535+564+568+768+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 415, 416, 532, 534, 535, 564, 568, 768, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6981 rotamers at 52 positions.
+core.pack.pack_rotamers: IG: 39675236 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 54, 55, 56, 57, 58, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 220, 221, 222, 223, 224, 225, 226, 227, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 417, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 228 -1  EDGE 228 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 228 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 53 -1  EDGE 53 57 -1  JEDGE 53 59 4 CA CA  END  EDGE 59 58 -1  EDGE 59 112 -1  EDGE 112 114 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 115 -1  EDGE 122 147 -1  EDGE 147 153 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 154 -1  EDGE 161 219 -1  EDGE 219 223 -1  JEDGE 219 228 7 CA CA  END  EDGE 228 224 -1  EDGE 228 254 -1  EDGE 254 258 -1  JEDGE 254 260 8 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 280 -1  JEDGE 279 285 9 CA CA  END  EDGE 285 281 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 10 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 418 11 CA CA  END  EDGE 418 416 -1  EDGE 418 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 12 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 13 CA CA  END  EDGE 569 564 -1  EDGE 569 767 -1  EDGE 767 772 -1  JEDGE 767 774 14 CA CA  END  EDGE 774 773 -1  EDGE 774 902 -1  EDGE 228 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0009 in 80 seconds.
+protocols.jobdist.JobDistributors: Looking for an available job: 10 1 4e3q.pdb 10
+apps.public.enzdes.enzyme_design: Starting 4e3q_0010 ...
+protocols.enzdes.EnzdesFixBBProtocol: starting apply function...
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Generating constraints for pose... 
+protocols.toolbox.match_enzdes_util.EnzConstraintParameters: for block 1, 1 newly generated constraints were added 
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: checking cst data consistency for block 1...  done
+protocols.toolbox.match_enzdes_util.EnzConstraintIO: Cst Block 1done... 
+protocols.enzdes.EnzdesBaseProtocol: Catalytic residues (pose numbering) are: 284 903 
+protocols.enzdes.EnzdesFixBBProtocol: Done setting up the task and constraints... 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+228+229+255+256+257+258+259+281+283+284+292+293+294+414+416+421+423+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 421, 423, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.PredesignPerturbMover: MultiConstraint
+protocols.enzdes.PredesignPerturbMover: Constrained ligand atom: 
+protocols.enzdes.PredesignPerturbMover: 17
+protocols.enzdes.PredesignPerturbMover: Constrained non-ligand atom: res 
+protocols.enzdes.PredesignPerturbMover: 284 atom 20
+protocols.enzdes.PredesignPerturbMover: starting predocking ... 
+protocols.moves.TrialCounter:              unk trials=    100;  accepts= 0.1300;  energy_drop/trial= -30.98987
+protocols.enzdes.PredesignPerturbMover: ... done predocking
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 56 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+160+220+222+225+226+227+228+229+255+256+257+258+259+281+282+283+284+292+293+294+414+416+421+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 149, 535, 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 160, 220, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 292, 293, 294, 414, 416, 421, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: starting cst_design, 3 cycles of design/minimization ... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating PDInteractionGraph
+core.pack.pack_rotamers: built 10007 rotamers at 56 positions.
+core.pack.pack_rotamers: IG: 75227248 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 285 -1  EDGE 285 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 19 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 20 -1  EDGE 21 49 -1  EDGE 49 53 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 54 -1  EDGE 58 112 -1  EDGE 112 117 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 118 -1  EDGE 122 147 -1  EDGE 147 151 -1  JEDGE 147 162 6 CA CA  END  EDGE 162 152 -1  EDGE 162 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 224 -1  EDGE 224 226 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 227 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 280 -1  EDGE 280 281 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 418 -1  EDGE 418 420 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 421 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 532 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 533 -1  EDGE 536 561 -1  EDGE 561 566 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 567 -1  EDGE 569 765 -1  EDGE 765 770 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 771 -1  EDGE 774 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6601 rotamers at 56 positions.
+core.pack.pack_rotamers: IG: 31540356 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 285 -1  EDGE 285 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 16 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 17 -1  EDGE 21 49 -1  EDGE 49 52 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 53 -1  EDGE 58 112 -1  EDGE 112 115 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 116 -1  EDGE 122 147 -1  EDGE 147 157 -1  JEDGE 147 162 6 CA CA  END  EDGE 162 158 -1  EDGE 162 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 224 -1  EDGE 224 227 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 228 -1  EDGE 230 254 -1  EDGE 254 255 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 256 -1  EDGE 260 280 -1  EDGE 280 283 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 284 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 422 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 423 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 563 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 564 -1  EDGE 569 765 -1  EDGE 765 767 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 768 -1  EDGE 774 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 6638 rotamers at 56 positions.
+core.pack.pack_rotamers: IG: 31924188 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 219, 220, 221, 222, 225, 226, 227, 228, 229, 255, 256, 257, 258, 259, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 419, 420, 421, 422, 423, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 285 -1  EDGE 285 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 16 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 17 -1  EDGE 21 49 -1  EDGE 49 53 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 54 -1  EDGE 58 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 153 -1  JEDGE 147 162 6 CA CA  END  EDGE 162 154 -1  EDGE 162 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 224 -1  EDGE 224 227 -1  JEDGE 224 230 8 CA CA  END  EDGE 230 228 -1  EDGE 230 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 280 -1  EDGE 280 281 -1  JEDGE 280 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 294 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 295 -1  EDGE 296 412 -1  EDGE 412 413 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 414 -1  EDGE 417 418 -1  EDGE 418 421 -1  JEDGE 418 424 13 CA CA  END  EDGE 424 422 -1  EDGE 424 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 14 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 565 -1  JEDGE 561 569 15 CA CA  END  EDGE 569 566 -1  EDGE 569 765 -1  EDGE 765 766 -1  JEDGE 765 774 16 CA CA  END  EDGE 774 767 -1  EDGE 774 902 -1  EDGE 285 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 52 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 452 -1  EDGE 1 453 1  EDGE 453 768 -1  EDGE 768 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 18 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 19 -1  EDGE 21 49 -1  EDGE 49 54 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 55 -1  EDGE 58 112 -1  EDGE 112 116 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 117 -1  EDGE 122 147 -1  EDGE 147 159 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 160 -1  EDGE 161 218 -1  EDGE 218 220 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 221 -1  EDGE 223 224 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 225 -1  EDGE 229 254 -1  EDGE 254 256 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 257 -1  EDGE 260 279 -1  EDGE 279 281 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 282 -1  EDGE 285 290 -1  EDGE 290 293 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 294 -1  EDGE 296 412 -1  EDGE 412 415 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 416 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 533 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 534 -1  EDGE 536 561 -1  EDGE 561 565 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 566 -1  EDGE 569 768 -1  EDGE 768 769 -1  JEDGE 768 774 15 CA CA  END  EDGE 774 770 -1  EDGE 774 902 -1  EDGE 768 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+core.pack.task: Packer task: initialize from command line() 
+protocols.enzdes.EnzdesTaskOperations: Reading resfile input from: resfile
+protocols.enzdes.EnzdesTaskOperations: Choosing the following residues as targets for detecting interface: 903+
+protocols.enzdes.EnzdesTaskOperations: Design Interface: detected 0 design-shell residues and 53 repack-shell residues, shell sizes cut1-4 used were 0 0 8 10
+protocols.enzdes.EnzdesTaskOperations: Design-shell Residues(pose-numbering): 
+protocols.enzdes.EnzdesTaskOperations: Repack-shell Residues(pose-numbering): 18+52+55+56+57+113+114+115+116+117+118+119+120+121+148+149+150+151+152+153+156+159+160+220+222+225+226+227+255+256+257+258+259+281+283+284+292+293+294+414+416+532+534+535+564+568+767+769+770+771+772+773+903+
+protocols.enzdes.EnzdesTaskOperations: Final Design Shell Residues: 
+protocols.enzdes.EnzdesTaskOperations: Final Repack Shell Residues: 18, 52, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 156, 159, 160, 220, 222, 225, 226, 227, 255, 256, 257, 258, 259, 281, 283, 284, 292, 293, 294, 414, 416, 532, 534, 535, 564, 568, 767, 769, 770, 771, 772, 773, 903, 
+protocols.enzdes.EnzdesTaskOperations: SetCatalyticResPackBehavior task operation touched the following catalytic residues: 284, 903, 
+protocols.enzdes.EnzdesFixBBProtocol: Starting after design unconstrained repack/minimization... 
+core.pack.dunbrack.SingleLigandRotamerLibrary: Added 359 rotamers for SUB
+core.pack.interaction_graph.interaction_graph_factory: Instantiating DensePDInteractionGraph
+core.pack.pack_rotamers: built 7267 rotamers at 53 positions.
+core.pack.pack_rotamers: IG: 40527716 bytes
+protocols.enzdes.EnzdesBaseProtocol: Doing a pose minimization... the backbone is allowed to move at positions: 16, 17, 18, 19, 20, 50, 51, 52, 53, 54, 55, 56, 57, 113, 114, 115, 116, 117, 118, 119, 120, 121, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 219, 220, 221, 222, 224, 225, 226, 227, 228, 255, 256, 257, 258, 259, 280, 281, 282, 283, 284, 291, 292, 293, 294, 295, 413, 414, 415, 416, 531, 532, 533, 534, 535, 562, 563, 564, 565, 566, 567, 568, 766, 767, 768, 769, 770, 771, 772, 773, 
+protocols.ligand_docking.LigandBaseProtocol: Moved ligand FOLD_TREE  EDGE 1 229 -1  EDGE 229 452 -1  EDGE 1 453 1  EDGE 453 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.ligand_docking.LigandBaseProtocol: Final loops foldtree FOLD_TREE  EDGE 1 15 -1  EDGE 15 16 -1  JEDGE 15 21 3 CA CA  END  EDGE 21 17 -1  EDGE 21 49 -1  EDGE 49 55 -1  JEDGE 49 58 4 CA CA  END  EDGE 58 56 -1  EDGE 58 112 -1  EDGE 112 119 -1  JEDGE 112 122 5 CA CA  END  EDGE 122 120 -1  EDGE 122 147 -1  EDGE 147 154 -1  JEDGE 147 161 6 CA CA  END  EDGE 161 155 -1  EDGE 161 218 -1  EDGE 218 221 -1  JEDGE 218 223 7 CA CA  END  EDGE 223 222 -1  EDGE 223 226 -1  JEDGE 223 229 8 CA CA  END  EDGE 229 227 -1  EDGE 229 254 -1  EDGE 254 258 -1  JEDGE 254 260 9 CA CA  END  EDGE 260 259 -1  EDGE 260 279 -1  EDGE 279 282 -1  JEDGE 279 285 10 CA CA  END  EDGE 285 283 -1  EDGE 285 290 -1  EDGE 290 292 -1  JEDGE 290 296 11 CA CA  END  EDGE 296 293 -1  EDGE 296 412 -1  EDGE 412 414 -1  JEDGE 412 417 12 CA CA  END  EDGE 417 415 -1  EDGE 417 452 -1  EDGE 1 453 1  EDGE 453 530 -1  EDGE 530 534 -1  JEDGE 530 536 13 CA CA  END  EDGE 536 535 -1  EDGE 536 561 -1  EDGE 561 567 -1  JEDGE 561 569 14 CA CA  END  EDGE 569 568 -1  EDGE 569 765 -1  EDGE 765 766 -1  JEDGE 765 774 15 CA CA  END  EDGE 774 767 -1  EDGE 774 902 -1  EDGE 229 903 2 
+protocols.ligand_docking.LigandBaseProtocol: 
+protocols.enzdes.EnzdesFixBBProtocol: Finished after design unconstrained repack/minimization... 
+apps.public.enzdes.enzyme_design: Finished 4e3q_0010 in 80 seconds.
+apps.public.enzdes.enzyme_design: Finished all 10 structures in 827 seconds.

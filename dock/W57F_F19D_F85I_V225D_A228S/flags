@@ -1,0 +1,34 @@
+##likely to be different for different ligands
+-extra_res_fa SUB.params        ##uses parameter files        
+#-enzdes::cstfile ../CS.enzdes.cst  ##uses constraints
+
+
+
+##general settings
+-enzdes
+ -cst_predock                        ##does a small docking perturbation of the ligand before the design step
+ -cst_design                         ## needed to invoke stage of sequence design and minimization
+
+ -detect_design_interface            ## option to invoke auto detection of residues, set to 0 to have all manual 
+ -cut1 0.0
+ -cut2 0.0
+ -cut3 8.0
+ -cut4 10.0
+
+ -cst_min                            ## necessary to invoke minimization 
+ -chi_min                            ## allows minimization of chi angles of the catalytic residues 
+ -bb_min                             ## allows backbone minimization 
+-packing::use_input_sc               ## rotamer that already exist in protein are added to collection of rotamers
+-packing::soft_rep_design            ## use soft repulsion potentials initially
+-extrachi_cutoff 1                   ## not sure what this means
+-out:file:o score.sc                 ## produces an enzyme score file out
+
+## specific for production runs is
+#-nstruct 50                ## for real production runs should probably be 5
+                          ## no constant seed (left out)
+-design_min_cycles 3      ## multiple rounds of repacking
+-ex1:level 4              ## get plenty of rotamers for design calculation
+-ex2:level 4
+-ex1aro:level 4
+-ex2aro:level 4
+-run:constant_seed
