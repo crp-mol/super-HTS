@@ -1,7 +1,10 @@
 # super-HTS
 
-Train a neural network to learn to predict the binding energy of combinatorial libraries of enzyme variants with a target ligand (constant). The sub-millisecond inference times enables you to screen the whole combinatorial space of billions or trillions of enzyme variants. The training data can come from more established (but slow) computational methods based on molecular modelling.
+**Super High-Throughput Screening of Enzyme Mutants**
 
+![cover](imgs/cover.png)
+
+Train a neural network to learn to predict the binding energy of combinatorial libraries of enzyme variants with a target ligand. The training data can come from more established (but slower) computational methods based on e.g., molecular modelling. Once trained, the NN can predict the binding energy of new variants from sequence only. The sub-millisecond inference times enable you to screen the whole combinatorial space of billions or trillions of enzyme variants on a single GPU.
 
 ---
 
@@ -29,7 +32,7 @@ cd super-HTS/
 
 #### 2. Conda environment installation
 
-Option 1:
+***Option 1:***
 
 ```bash
 # Create conda environment from `environment.yml` and `requirements.txt`
@@ -38,7 +41,7 @@ conda env create -f environment.yml
 conda activate super-HTS
 ```
 
-Option 2:
+***Option 2:***
 
 ```bash
 conda create -n "super-HTS" python=3.10
@@ -52,8 +55,6 @@ pip install -r requirements.txt
 
 ```
 
-
-
 #### 3. Train the neural network
 
 To train the neural network you need a dataset of mutants labelled with some form of *score* that tells you how good or bad the mutant is (e.g., binding energy). The number of datapoints needed depends on the number of hotspots (positions allowed to mutate) and the degree of the mutants (single, double, triple,...), but in general aim for at least 1000.
@@ -65,7 +66,7 @@ To train the neural network you need a dataset of mutants labelled with some for
 | Y78F_W56M         | -12.5              |
 
 
-Once you have your dataset, train the NN (~30 min using a GPU):
+Once you have your dataset, train the NN (~30 min on a GPU):
 
 ```bash
 python3 GCN.py -f datasets/D1.dat -r dock/4e3q.pdb --aa_index AAIndex.csv --train_model 
@@ -196,11 +197,18 @@ A,R,N,D,C,Q,E,G,H,I,L,K,M,F,P,S,T,W,Y,V,AAIndex
 
 ```
 
+### The ligand
+
+The NN is agnostic to the identity of the ligand, so it must be kept constant within the training dataset. A few of the tested ligands can be found in the subdirectory [`ligands`](ligands/).
+
+![ligands](imgs/ligands.png)
+
+
 ---
 
 ## FAQ
 
-1. *How many mutants do I need to train this algorithm?*. That depends on the enzyme, the ligand, the degree of the mutants (single, double, triple, ...) and the number of hotspots (positions allowed to mutate), but in general 1000 should do. 
+1. *How many mutants do I need to train this algorithm?*. That depends on the enzyme, the ligand, the [degree](#hotspots-and-mutant-degrees) of the mutants (single, double, triple, ...) and the number of [hotspots](#hotspots-and-mutant-degrees) (positions allowed to mutate), but in general 1000 should do. 
 
 2. *Do I need to use Rosetta?*. No, you can measure the *fitness* of your mutants using any method you want: umbrella sampling, linear interaction energy, thermodynamic integration, experimental measurements, etc... You just need to be consistent and be able to produce at least 1k datapoints for training.
 
@@ -212,10 +220,10 @@ A,R,N,D,C,Q,E,G,H,I,L,K,M,F,P,S,T,W,Y,V,AAIndex
 
 6. *Can it extrapolate to positions I did not include in the training dataset?*: Generally, no. But you can try.
 
-7. *Can it do datasets that don't involve protein-ligand?*. Yes, anything for which you can create a combinatorial library. For example, you can train it to predict the FoldX score of a variant to find mutants with improved thermostability. This does not involve a substrate. 
+7. *Can it do datasets that don't involve protein-ligand?*. Yes, anything for which you can create a combinatorial library. For example, you can train it to predict the [FoldX](https://foldxsuite.crg.eu/) score of a variant to find mutants with improved thermostability. This does not involve a substrate. 
 
 8. *Do I need structures?*. You only need one structure of the wild-type to tell the NN the topology of your protein, but you don't need structural information to evaluate any of the mutants. The neural network only needs one input, a string containing your mutant id, for example: `F86V_F85R_V225K_A228N_W57V_F19H_Y150W`. You can obtain your structure from the [PDB](https://www.rcsb.org/), the [AlphaFold-DB](https://alphafold.ebi.ac.uk/), or compute it yourself using [AlphaFold](https://github.com/deepmind/alphafold) [ColabFold](https://github.com/sokrypton/ColabFold) or any other flavour of AlphaFold.
 
-9. *Are the predictions accurate?*. So far, we've seen correlations of `r² > 0.7` when plotting `predicted` vs `target` values, and in some cases `r² > 0.85`. To make sure it works for *your* system, hold onto a small portion of your dataset (10-20%) by not showing it to the NN at training time so that you can compare the predictions it later makes to the values you calculated using whatever other method used.
+9. *Are the predictions accurate?*. So far, we've seen correlations of `r² > 0.7` when plotting `predicted` vs `target` values, and in some cases `r² > 0.9`. To make sure it works for *your* system, hold onto a small portion of your dataset (10-20%) by not showing it to the NN at training time so that you can compare the predictions it later makes to the values you calculated using whatever other method used.
 
-10. *Ok, I trained my model and it gives decent predictions in a few ms of computation, now what?*.  You can explore the entire search space if you want to, for example, get the best mutant possible. Or you can use your imagination and get some statistics using the whole search space previously inaccessible.
+10. *Ok, I trained my model and it gives decent predictions in a few ms of computation, now what?*.  You could, for example, explore the entire search space if you to find the best mutant possible. Or you could get some statistics on the whole search space previously inaccessible. Use your imagination.
