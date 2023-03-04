@@ -426,7 +426,7 @@ def evaluate_mutants(mutants: list, model, aaindex: pd.DataFrame, features: list
 
     return preds
 
-def evaluate_custom_csv(input_csv: str, output_csv: str, model, aaindex, features, active_site, mutable_pos, edge_matrix, mean, std):
+def evaluate_custom_csv(input_csv: str, model, aaindex, features, active_site, mutable_pos, edge_matrix, mean, std):
     '''
     Evaluate a list of mutants provided by the user. Output is a DataFrame object containing the predictions. 
 
@@ -446,6 +446,7 @@ or
     -11.2190    Y150D_F19D_F85E
 
     '''
+    print (f'Evaluating custom list of mutants from `{input_csv}`.')
     df = pd.read_csv(input_csv, sep='\s+', names=['score','std','replicas','mutant_id'])
     df =  df[['mutant_id','score']]
     mutants = df['mutant_id'].tolist()
@@ -606,11 +607,13 @@ def main():
         model.load_weights('./trained_models/best_weights.ckpt')
     
     # Evaluate mutants provided by user
-    mutants = ['F19A_F85C','F19A_F85D','F19L_W57E_Y150G']
-    evaluate_mutants(args.mutants, model=model, aaindex=aaindex, features=features, active_site=enzyme.active_site, mutable_pos=mutable_pos, edge_matrix=enzyme.edge_matrix, mean=mean, std=std)
+    #mutants = ['F19A_F85C','F19A_F85D','F19L_W57E_Y150G']
+    #evaluate_mutants(args.mutants, model=model, aaindex=aaindex, features=features, active_site=enzyme.active_site, mutable_pos=mutable_pos, edge_matrix=enzyme.edge_matrix, mean=mean, std=std)
 
     if args.input_eval is not None:
-        _ = evaluate_custom_csv(args.input_eval,'out.csv', model=model, aaindex=aaindex, features=features, active_site=enzyme.active_site, mutable_pos=mutable_pos, edge_matrix=enzyme.edge_matrix, mean=mean, std=std)
+        df = evaluate_custom_csv(args.input_eval, model=model, aaindex=aaindex, features=features, active_site=enzyme.active_site, mutable_pos=mutable_pos, edge_matrix=enzyme.edge_matrix, mean=mean, std=std)
+    df.to_csv('out.csv')
+    print ('Printed out.csv')
 
 
 if __name__ == '__main__':

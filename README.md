@@ -4,7 +4,9 @@
 
 ![cover](imgs/cover.png)
 
-Train a neural network to learn to predict the binding energy of combinatorial libraries of enzyme variants with a target ligand. The training data can come from more established (but slower) computational methods based on e.g., molecular modelling. Once trained, the NN can predict the binding energy of new variants from sequence only. The sub-millisecond inference times enable you to screen the whole combinatorial space of billions or trillions of enzyme variants on a single GPU.
+Train a neural network to learn to predict the binding energy of **combinatorial libraries** of enzyme variants with a target ligand. The training data can come from more established (but slower) computational methods based on e.g., molecular modelling. Once trained, the NN can predict the binding energy of new variants **from sequence only**. The sub-millisecond inference times enable you to screen the whole combinatorial space of billions or trillions of enzyme variants on a single GPU.
+
+![pipeline](imgs/pipeline.png)
 
 ---
 
@@ -47,26 +49,29 @@ conda activate super-HTS
 conda create -n "super-HTS" python=3.10
 conda activate super-HTS
 
-# PyPI manual installation
+# PIP install of required packages 
+pip install -r requirements.txt
+
+# Or you can also install them manually 
 python3 -m pip install six scipy==1.9.3 pyparsing==3.0.9 tensorflow==2.9.1 MDAnalysis spektral==1.1.0
 
-# PyPI semi-manual instalation
-pip install -r requirements.txt
 
 ```
 
 #### 3. Train the neural network
 
-To train the neural network you need a dataset of mutants labelled with some form of *score* that tells you how good or bad the mutant is (e.g., binding energy). The number of datapoints needed depends on the number of hotspots (positions allowed to mutate) and the degree of the mutants (single, double, triple,...), but in general aim for at least 1000.
+A combinatorial library of mutants is needed to train the neural network. The mutants need to be labelled with some form of score that speaks about how *good* or *bad* the enzyme is (*e.g.*, binding energies). The number of mutants needed depends on the number of [hotspots](#hotspots-and-mutant-degrees) (*i.e.*, positions allowed to mutate) and the degree of the mutants (single, double, triple, ...). In general, aim for at least 1k.
 
-|    mutant_id      | energy (kcal/mol)  |
-|-------------------|--------------------|
-| F86L              | -10.0              |
-| F86L_Y78F         |  -9.5              |
-| Y78F_W56M         | -12.5              |
+```bash
+$ cat mydataset.dat
+mutant_id   energy (kcal/mol)
+F86L        -10.0
+F86L_Y78F    -9.5
+Y78F_W56M   -12.5
+...         ...
+```
 
-
-Once you have your dataset, train the NN (~30 min on a GPU):
+Training takes around ~30 min on GPU:
 
 ```bash
 python3 GCN.py -f datasets/D1.dat -r dock/4e3q.pdb --aa_index AAIndex.csv --train_model 
@@ -85,7 +90,7 @@ python3 ./GCN.py -f datasets/D1.dat -r dock/4e3q.pdb --aa_index AAIndex.csv --in
 Compare predictions made by the neural network with the values obtained using the method you used to generate your training dataset (e.g., Rosetta scores).
 
 ```bash
-$ cat mydataset.txt
+$ cat out.dat 
             ---- energy (kcal/mol) ----
 mutant_id   neural_network   Rosetta_score
 F86W        -9.5            -9.6
@@ -116,13 +121,15 @@ Of course, predictions are less accurate the more *hotspots* you have, the less 
 
 ### Dataset generation
 
-The training dataset was generated using the Rosetta score. A directory is provided with the necessary files to make a dataset of VfTA-ligand.
+The training dataset was generated using the [Rosetta EnzDes](https://www.rosettacommons.org/docs/latest/application_documentation/design/enzyme-design) application and labelled with the interface energy scores. The interface energies were chosen because it has been [shown](https://doi.org/10.1021/acs.jcim.1c00617) to correlate well with experimental activities in transaminases. A directory is provided with the necessary files to make a dataset of *Vf*TA-ligand complexes.
+
+The command to run Rosetta is as follows:
 
 ```bash
 $ROSETTA_DIR/main/source/bin/enzyme_design.static.linuxgccrelease @flags -resfile resfile -database $ROSETTA_DIR/main/database/ -nstruct 10 -s 4e3q.pdb > log
 ```
 
-Where, [`flags`](dock/Y150T_F86I/flags) contains a list of command-line options to give Rosetta, `-nstruct 10` tells Rosetta to generate 10 decoys per mutant, `-s `[`4e3q.pdb`](dock/4e3q.pdb) tells Rosetta the location of the input file containing the protein with the ligand placed near the active site. You can also provide a cst file with: `-enzdes::cstfile enzdes.cst`.The resfile contains the list of mutations that Rosetta will attempt to make:
+where [`flags`](dock/Y150T_F86I/flags) contains a list of command-line options to give Rosetta, `-nstruct 10` tells Rosetta to generate 10 decoys per mutant, `-s `[`4e3q.pdb`](dock/4e3q.pdb) tells Rosetta the location of the input file containing the protein with the ligand placed near the active site. You can also provide a cst file with: `-enzdes::cstfile enzdes.cst`. The [`resfile`](dock/Y150T_F86I/resfile) contains the list of mutations that Rosetta will attempt to make:
 
 ```bash
 $ cat resfile
@@ -142,7 +149,7 @@ $ cat resfile
 
 ### Hotspots and mutant degrees
 
-The following dataset of mutants:
+Given the following dataset:
 
 ```bash
 # Nr   mutant_id            
@@ -153,16 +160,16 @@ mut4   W57M_F85F               # also degree=1 bc position 85 is not mutated
 mut5   F19M_W57G
 ```
 
-contains **4 hotspots** because positions `19`, `57`, `85`, and `150` are allowed to mutate. The more hotspots you have the larger the dataset needs to be to allow the NN to *learn* to combine the position with all the other positions. Note that it is not required that each and every individual mutant in the dataset have all their 4 hotspots mutated, e.g., mut3 only has one mutation at `150`.
+- It contains **4 hotspots** because positions `19`, `57`, `85`, and `150` are allowed to mutate. ↑hotspots = ↑dataset. It is not required that each and every individual mutant have all their hotspots mutated at once, *e.g.*, `mut3` only has one mutation at position `150`.
 
-The dataset above contains n=5 mutants. You need 1-10k to train a NN.
+- It contains `n=5` mutants. You need `1-10k` to train a NN.
 
-The dataset above contains single (`Y150A`), double (`F19M_W57G`), triple (`F19G_W57E_F85H`), and quadruple (`W57M_F85A_F19I_Y150K`) mutants. The higher the degree the larger the dataset needs to be to allow the NN to *learn* to combine all the positions. You can go up to 8 but at some point around 10-12 accuracy drops drastically. Although it doesn't matter too much because in any protein engineering campaign you will hardly see 10-12th degree mutants in 1 round of mutagenesis.
+- It contains *single* (`Y150A`), *double* (`F19M_W57G`), *triple* (`F19G_W57E_F85H`), and *quadruple* (`W57M_F85A_F19I_Y150K`) mutants. The higher the degree the larger the dataset needs to be to allow the NN to *learn* to combine all the positions. You could go up to 8th degree mutants but at around 10-12th degree the accuracy of the model becomes too poor. In practice, this limitation does not matter because in protein engineering campaigns you will hardly ever see degree 10-12 mutants in one round of mutagenesis.
 
-The mutant `W57M_F85F` is degree `1` (single mutant) because only position `57` was mutated from `Trp` → `Met`. Position `85` was not mutated. The larger the average degree of your mutants in the dataset the larger the training dataset needs to be.
+- The mutant `W57M_F85F` is degree `1` (single mutant) because only position `57` was mutated from `Trp` → `Met`. Position `85` was not mutated. The larger the average degree of your mutants in the dataset the larger the training dataset needs to be.
 
 
-From the following test dataset:
+If we now wanted to evaluate the following list of mutants:
 
 ```bash
 # Nr    mutant_id
@@ -171,7 +178,7 @@ mut2   Y150A_W20A               # <- wrong, position 20 was never included in th
 mut3   Y150V                    
 ```
 
-he trained network WILL NOT be able to predict the binding energy of `mut2` (`Y150A_W20A`), because position `20` was never included in the training dataset, only positions `19`, `57`, `85`, and `150` were allowed during training and so must be during evaluation. If you try to evaluate such a mutant, you'll see a warning:
+the trained network WILL NOT be able to predict the binding energy of `mut2` (`Y150A_W20A`), because position `20` was never included in the training dataset, only positions `19`, `57`, `85`, and `150` were mutated during training and so must be during evaluation. Trying to evaluate `mut2` would only result in a warning:
 
 ```python
 warnings.warn(f'Positions {(pos - mutable_pos)} are not part of the 
@@ -180,7 +187,7 @@ mutable positions in the dataset used for training, {mutable_pos=}.')
 
 ### AAIndex
 
-You can download the [AAIndex](https://doi.org/10.1093/nar/gkm998) from the official website:
+To featurize the graph nodes (amino acids), we used AAIndex [AAIndex](https://doi.org/10.1093/nar/gkm998), which you can download from the [official website](https://www.genome.jp/ftp/db/community/aaindex):
 
 ```bash
 wget https://www.genome.jp/ftp/db/community/aaindex/aaindex1
@@ -190,7 +197,8 @@ A script to download and convert the `aaindex1` → `AAIndex.csv` is provided.
 
 
 ```bash
-$ python3 aaindex.py   # This should download and convert the AAIndex to the format we want.
+# Download and convert the AAIndex to a more computer-friendly format
+$ python3 aaindex.py
 
 $ cat AAIndex.csv 
 A,R,N,D,C,Q,E,G,H,I,L,K,M,F,P,S,T,W,Y,V,AAIndex
