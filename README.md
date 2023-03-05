@@ -60,7 +60,7 @@ python3 -m pip install six scipy==1.9.3 pyparsing==3.0.9 tensorflow==2.9.1 MDAna
 
 #### 3. Train the neural network
 
-A combinatorial library of mutants is needed to train the neural network. The mutants need to be labelled with some form of score that speaks about how *good* or *bad* the enzyme is (*e.g.*, binding energies). The number of mutants needed depends on the number of [hotspots](#hotspots-and-mutant-degrees) (*i.e.*, positions allowed to mutate) and the degree of the mutants (single, double, triple, ...). In general, aim for at least 1k.
+A combinatorial library of mutants is needed to train the neural network. The mutants need to be labelled with some form of score that speaks about how *good* or *bad* the enzyme is (*e.g.*, binding energies). The number of mutants needed to train the model depends on the number of [hotspots](#hotspots-and-mutant-degrees) (*i.e.*, positions allowed to mutate) and the degree of the mutants (single, double, triple, ...). In general, aim for at least 1k.
 
 ```bash
 $ cat mydataset.dat
@@ -82,7 +82,11 @@ python3 GCN.py -f datasets/D1.dat -r dock/4e3q.pdb --aa_index AAIndex.csv --trai
 Test the performance of the trained model with mutants that it never saw during training/validation. Extra mutants for dataset `D1` can be found in [`datasets/D1-extra`](datasets/D1-extra.dat).
 
 ```bash
-python3 ./GCN.py -f datasets/D1.dat -r dock/4e3q.pdb --aa_index AAIndex.csv --input_eval datasets/D1-extra.dat
+# evaluate from input file
+python3 GCN.py -f datasets/D1.dat -r dock/4e3q.pdb --aa_index AAIndex.csv --input_eval datasets/D1-extra.dat
+
+# evaluate from command-line argument
+python3 GCN.py -f datasets/D1.dat -r dock/4e3q.pdb --aa_index AAIndex.csv --mutants Y150D_F19D_F85E,F85K_F19C,Y150A
 ```
 
 #### 5. Evaluate predictions
@@ -187,7 +191,7 @@ mutable positions in the dataset used for training, {mutable_pos=}.')
 
 ### AAIndex
 
-To featurize the graph nodes (amino acids), we used AAIndex [AAIndex](https://doi.org/10.1093/nar/gkm998), which you can download from the [official website](https://www.genome.jp/ftp/db/community/aaindex):
+To featurize the graph nodes (amino acids), we used the [AAIndex](https://doi.org/10.1093/nar/gkm998), which you can download from the [official website](https://www.genome.jp/ftp/db/community/aaindex):
 
 ```bash
 wget https://www.genome.jp/ftp/db/community/aaindex/aaindex1
@@ -216,13 +220,17 @@ The NN is agnostic to the identity of the ligand, so it must be kept constant wi
 ![ligands](imgs/ligands.png)
 
 
+### Feature injection
+
+[section under construction]
+
 ---
 
 ## FAQ
 
 1. *How many mutants do I need to train this algorithm?*. That depends on the enzyme, the ligand, the [degree](#hotspots-and-mutant-degrees) of the mutants (single, double, triple, ...) and the number of [hotspots](#hotspots-and-mutant-degrees) (positions allowed to mutate), but in general 1000 should do. 
 
-2. *Do I need to use Rosetta?*. No, you can measure the *fitness* of your mutants using any method you want: umbrella sampling, linear interaction energy, thermodynamic integration, experimental measurements, etc... You just need to be consistent and be able to produce at least 1k datapoints for training.
+2. *Do I need to use Rosetta?*. No, you can measure the *fitness*/*goodness* of your mutants using any method you want: umbrella sampling, linear interaction energy, thermodynamic integration, experimental measurements, etc... You just need to be consistent and be able to produce at least 1k datapoints for training.
 
 3. *How long does it take to train and evaluate?*. That depends on your hardware, but in general (on a GPU) training takes 30 min and evaluation takes about 1-3 milliseconds per variant. The dataset generation is the most expensive part. Using Rosetta it took 1 core-min (CPU core) per variant (10 replicas per variant * 1000 variants = 10k core-min). On a typical desktop with ~12 cores, this means 10k core-min / 12 cores = 833 human minutes = *13.8 hours* for a dataset of *1k* variants. 
 
@@ -234,8 +242,12 @@ The NN is agnostic to the identity of the ligand, so it must be kept constant wi
 
 7. *Can it do datasets that don't involve protein-ligand?*. Yes, anything for which you can create a combinatorial library. For example, you can train it to predict the [FoldX](https://foldxsuite.crg.eu/) score of a variant to find mutants with improved thermostability. This does not involve a substrate. 
 
-8. *Do I need structures?*. You only need one structure of the wild-type to tell the NN the topology of your protein, but you don't need structural information to evaluate any of the mutants. The neural network only needs one input, a string containing your mutant id, for example: `F86V_F85R_V225K_A228N_W57V_F19H_Y150W`. You can obtain your structure from the [PDB](https://www.rcsb.org/), the [AlphaFold-DB](https://alphafold.ebi.ac.uk/), or compute it yourself using [AlphaFold](https://github.com/deepmind/alphafold) [ColabFold](https://github.com/sokrypton/ColabFold) or any other flavour of AlphaFold.
+8. *Do I need structures?*. You only need one structure of the wild-type to tell the NN the topology of your protein, but you don't need structural information to evaluate any of the mutants. The neural network only needs one input, a string containing your mutant id, for example: `F86V_F85R_V225K_A228N_W57V_F19H_Y150W`. You can obtain your structure from the [PDB](https://www.rcsb.org/), the [AlphaFold-DB](https://alphafold.ebi.ac.uk/), or compute it yourself using [AlphaFold](https://github.com/deepmind/alphafold) [ColabFold](https://github.com/sokrypton/ColabFold) or any other flavour of AlphaFold. While it increases accuracy, a wild-type structure is completely optional, you could set all edge attributes to `1.0`.
 
 9. *Are the predictions accurate?*. So far, we've seen correlations of `r² > 0.7` when plotting `predicted` vs `target` values, and in some cases `r² > 0.9`. To make sure it works for *your* system, hold onto a small portion of your dataset (10-20%) by not showing it to the NN at training time so that you can compare the predictions it later makes to the values you calculated using whatever other method used.
 
 10. *Ok, I trained my model and it gives decent predictions in a few ms of computation, now what?*.  You could, for example, explore the entire search space if you to find the best mutant possible. Or you could get some statistics on the whole search space previously inaccessible. Use your imagination.
+
+---
+
+## Citation
