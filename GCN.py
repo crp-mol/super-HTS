@@ -16,6 +16,9 @@ import MDAnalysis as mda
 from MDAnalysis.analysis import contacts
 from MDAnalysis.analysis import distances
 
+import itertools
+import random
+
 def load_dataset(csv_file: str) -> Union[pd.DataFrame, float, float]:
     '''
     Dataset contains the list of mutants scored by Rosetta or any other algorithm. 
@@ -331,11 +334,15 @@ def evaluate_model(model, loader):
     preds=[]
     targets=[]
     step = 0
+    start=time.perf_counter()
     # Loop through each element in the dataset
     while step < loader.steps_per_epoch:
         step += 1
-        if step%500 == 0:
-            print (f'Done with step {step}')
+        if step%1000 == 0:
+            end = time.perf_counter()
+            elapsed_t = end - start
+            print (f'Done with step {step}/{loader.steps_per_epoch} in {elapsed_t:.1f} s')
+            start = time.perf_counter()
         inputs, target = loader.__next__()
         pred = model((inputs[0], inputs[1]), training=False)
         pred = pred.numpy()[0][0] # <- change if you want to allow more batch sizes
@@ -425,6 +432,66 @@ def evaluate_mutants(mutants: list, model, aaindex: pd.DataFrame, features: list
     preds = [(pred*std)+mean for pred in preds]
 
     return preds
+
+def gen_mutant_combinations(mutable_pos: list, active_site: dict, chunksize: int, method: str, AA: list):
+    '''
+    Yields list containing n mutants at each iteration, stops when there are no more mutants left.
+    method='random' or 'sequential'
+    '''
+    def _sequential(mutable_pos: list, active_site: dict, chunksize: int, start: int, end: int, AA: list):
+        nr_positions = len(mutable_pos)
+        aa = list(itertools.product(AA, repeat=nr_positions))
+        from_ = [active_site[int(pos)][1] for pos in mutable_pos] # ['Y', 'F', 'W', 'F']
+        mutants = []
+        for to_ in aa:
+            mutant = [f'{from_[i]}{mutable_pos[i]}{to_[i]}' for i in range(nr_positions)]
+            mutants.append('_'.join(mutant))
+        return mutants[start:end]
+
+    def _random(mutable_pos: list, active_site: dict, chunksize: int, AA: list):
+        nr_positions = len(mutable_pos)
+        from_ = [active_site[int(pos)][1] for pos in mutable_pos] 
+        mutants = []
+        for _ in range(chunksize):
+            to_ = random.choices(AA, k=nr_positions) # ['Y', 'F', 'W', 'F']
+            mutant = [f'{from_[i]}{mutable_pos[i]}{to_[i]}' for i in range(nr_positions)]
+            mutants.append('_'.join(mutant))
+        return mutants
+        
+    nr_positions = len(mutable_pos)
+    len_combinatorial = (len(AA))**nr_positions
+    counter=0
+    while counter < len_combinatorial:
+        if method=='sequential':
+            mutants = _sequential(mutable_pos, active_site, chunksize, start=counter, end=counter+chunksize, AA=AA)
+        elif method == 'random':
+            mutants = _random(mutable_pos, active_site, chunksize, AA)
+        yield mutants
+        counter += chunksize
+
+def screen_all(model, aaindex: pd.DataFrame, features: list, active_site: dict, mutable_pos: list, edge_matrix: scipy.sparse._csr.csr_matrix, mean: float,std: float):
+    '''
+    Evaluate all possible mutants.
+    Mutant generation is `sequential` with small combinatorial spaces (with 4 or less mutable_pos). Uniqueness is guaranteed but consumes a lot of memory.
+    For larger combinatorial spaces, mutant generation is `random` and uniqueness is not guaranteed
+    In any case it saves csv file at every `chunksize` step.
+    '''
+    AA = ['A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y']
+    chunksize=100000 # number of mutants to print at each checkpoint
+    basefile='screen_'
+    len_combinatorial = (len(AA))**len(mutable_pos)
+    method = 'random' if len(mutable_pos)>4 else 'sequential' 
+    
+    mutants_generator = gen_mutant_combinations(mutable_pos=mutable_pos, active_site=active_site, chunksize=chunksize, method=method, AA=AA)
+
+    for i,mutants in enumerate(mutants_generator):
+        preds = evaluate_mutants(mutants=mutants, model=model, aaindex=aaindex, features=features, active_site=active_site, mutable_pos=mutable_pos, edge_matrix=edge_matrix, mean=mean, std=std)
+        df = pd.DataFrame(zip(mutants, preds), columns=['mutant_id','prediction'])
+        df = df.round({'prediction': 3})
+        start = i*chunksize
+        end = (i+1)*chunksize 
+        df.to_csv( f'{basefile}{start}-{end}.csv', index=False)
+        print (f'Saved mutants {start} - {end} of {len_combinatorial} to `{basefile}{start}-{end}.csv`')
 
 def evaluate_custom_csv(input_csv: str, model, aaindex, features, active_site, mutable_pos, edge_matrix, mean, std):
     '''
@@ -526,6 +593,7 @@ def parse_args():
     parser.add_argument('--aa_index', type=str, required=True, help='Input csv with amino acid features. e.g., "AAIndex.csv"')
     parser.add_argument('--input_eval', type=str, required=False, help='File containing a list of mutants the user wants to evaluate.')
     parser.add_argument('--mutants', type=str, nargs='+', required=False, help='List of mutants to evaluate. Format: Y150D_F19D_F85E,F85K_F19C,Y150A')
+    parser.add_argument('--screen', action='store_true', help='Use the trained model to screen the entire combinatorial space.')
     args = parser.parse_args()
     return args
     
@@ -543,11 +611,13 @@ def main():
 
     # Enzyme
     enzyme = Enzyme(args.pdb_reference, mutable_pos)
-    enzyme.find_active_site()
-    enzyme.active_site = {18: ('A','G'), 19: ('A','F'), 55: ('A','G'), 56: ('A','L'), 57: ('A','W'), 118: ('A','S'), 150: ('A','Y'),
+    if os.path.basename(args.pdb_reference) == '4e3q.pdb':
+        enzyme.active_site = {18: ('A','G'), 19: ('A','F'), 55: ('A','G'), 56: ('A','L'), 57: ('A','W'), 118: ('A','S'), 150: ('A','Y'),
                151: ('A','H'), 223: ('A','E'), 225: ('A','V'), 227: ('A','G'), 228: ('A','A'), 256: ('A','D'),
                257: ('A','E'), 415: ('A','R'), 417: ('A','L'), 424: ('A','C'), 82: ('B','Y'), 83: ('B','H'), 84: ('B','A'),
                85: ('B','F'), 86: ('B','F'), 88: ('B','R')}
+    else:
+        enzyme.find_active_site()
     enzyme.generate_distogram()
     enzyme.create_edgematrix()
 
@@ -612,9 +682,11 @@ def main():
 
     if args.input_eval is not None:
         df = evaluate_custom_csv(args.input_eval, model=model, aaindex=aaindex, features=features, active_site=enzyme.active_site, mutable_pos=mutable_pos, edge_matrix=enzyme.edge_matrix, mean=mean, std=std)
-    df.to_csv('out.csv')
-    print ('Printed out.csv')
+        df.to_csv('out.csv')
+        print ('Printed out.csv')
 
+    if args.screen:
+        screen_all(model=model, aaindex=aaindex, features=features, active_site=enzyme.active_site, mutable_pos=mutable_pos, edge_matrix=enzyme.edge_matrix, mean=mean, std=std)
 
 if __name__ == '__main__':
     main()
